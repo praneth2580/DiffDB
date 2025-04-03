@@ -92,3 +92,25 @@ document.getElementById('compareForm').addEventListener('submit', async (event) 
         console.error(error);
     }
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const darkModeToggle = document.getElementById("toggleDarkMode");
+    const body = document.body;
+
+    // Check if dark mode was previously enabled
+    if (localStorage.getItem("darkMode") === "enabled") {
+        body.classList.add("dark-mode");
+    }
+
+    darkModeToggle.addEventListener("click", function () {
+        body.classList.toggle("dark-mode");
+
+        // Save preference in localStorage
+        if (body.classList.contains("dark-mode")) {
+            localStorage.setItem("darkMode", "enabled");
+        } else {
+            localStorage.setItem("darkMode", "disabled");
+        }
+    });
+});
