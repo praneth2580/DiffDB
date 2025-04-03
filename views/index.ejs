@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schema Comparison Tool</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PostgreSQL Schema Comparison</h1>
+        <button id="toggleDarkMode">🌙 Dark Mode</button>
+        <p>Enter details for both databases and compare their schemas.</p>
+
+        <form id="compareForm">
+            <h3>Database 1</h3>
+            <input type="text" id="db1_host" placeholder="Host" value="localhost" required>
+            <input type="number" id="db1_port" placeholder="Port" value="5432" required>
+            <input type="text" id="db1_database" placeholder="Database Name" required>
+            <input type="text" id="db1_user" placeholder="User" value="postgres" required>
+            <input type="password" id="db1_password" placeholder="Password" required>
+            <input type="text" id="db1_schema" placeholder="Schema Name" value="public" required>
+
+            <h3>Database 2</h3>
+            <input type="text" id="db2_host" placeholder="Host" value="localhost" required>
+            <input type="number" id="db2_port" placeholder="Port" value="5432" required>
+            <input type="text" id="db2_database" placeholder="Database Name" required>
+            <input type="text" id="db2_user" placeholder="User" value="postgres" required>
+            <input type="password" id="db2_password" placeholder="Password" required>
+            <input type="text" id="db2_schema" placeholder="Schema Name" value="public" required>
+
+            <button type="submit">Compare Schemas</button>
+        </form>
+
+        <div id="loader" class="loader"></div>
+        <div id="result"></div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
